@@ -67,20 +67,7 @@ Open **⚙️ Settings → Document Theme** on **[mdtopdf.space](https://mdtopdf
 - **IEEE 2-Column (Paper):** Full-width title banner with a two-column justified body for conference papers and research summaries.
 - **Exam Cheat-Sheet (Dense 2-Col):** Ultra-compact `11px` two-column layout with `7mm` margins so you can fit 4–5 pages of lecture notes and formulas onto a single printable sheet.
 
-### 2. Automatic Lab Report Cover Header (YAML Frontmatter)
-Paste YAML frontmatter at the top of your Markdown to generate a structured academic header banner automatically:
-
-```yaml
----
-course: RME-3102 · Robotics & Control Systems Engineering
-title: State-Space Optimal Control & Kinematics Lab Report
-author: Md. Ajmain Istiak Apon
-id: Roll #24 · University of Dhaka
-date: October 22, 2026
----
-```
-
-### 3. Supported Mathematical & Scientific Notation
+### 2. Supported Mathematical & Scientific Notation
 - **LaTeX Environments:** `equation`, `align`, `aligned`, `gather`, `gathered`, `matrix`, `pmatrix`, `bmatrix`, `Bmatrix`, `vmatrix`, `Vmatrix`, `cases`, `rcases`, `split`, `array`
 - **Physics Macros:** `\dd{t}`, `\dv{y}{x}`, `\dv[2]{y}{x}`, `\pdv{f}{x}`, `\vb{x}`, `\va{x}`, `\vu{x}`, `\abs{x}`, `\norm{x}`, `\bra{\psi}`, `\ket{\phi}`, `\braket{\psi}{\phi}`, `\ev{A}`, `\mel{n}{A}{m}`
 - **SI Units (`siunitx`):** `\SI{45}{\milli\second}`, `\SI{10}{\kilo\ohm}`, `\SI{25}{\celsius}`, `\num{1.6e-19}`, `\ang{45}`
