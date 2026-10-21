@@ -42,7 +42,9 @@ Most online Markdown-to-PDF tools break when you paste **ChatGPT equations**, **
 | **Chemistry Equations (`\ce{H2SO4}`, `\pu{12.4 kJ/mol}`)** | ❌ Unsupported | ✅ Full `mhchem` Integration |
 | **Plain-Text Engineering Formulas (`V_out = V_in * R_2 / (R_1 + R_2)`)** | ❌ Breaks `_` into `<em>` | ✅ Auto-Formatted as Subscripted Equations |
 | **Mermaid.js Flowcharts & Sequence Diagrams** | ❌ Raw Code | ✅ Crisp Vector SVG Diagrams |
-| **IEEE 2-Column Paper & Dense Exam Cheat-Sheet Modes** | ❌ Single Layout | ✅ 1-Click Switch in **⚙️ Settings** |
+| **Markdown With Local Photos (`./images/photo.png` & Obsidian `![[photo.png|420]]`)** | ❌ Broken Image Icon | ✅ 1-Click Missing Photo Attach + Multi-File Drag & Drop + Figure Captions |
+| **Clipboard Screenshot Paste (`Cmd+V`) & Web Image CORS Protection** | ❌ Blank in PDF | ✅ Instant Screenshot Paste + Inline Base64 PDF Export |
+| **IEEE 2-Column Paper & Dense Exam Cheat-Sheet Modes** | ❌ Single Layout | ✅ 1-Click Switch in **⚙️ Settings** (Auto-Spans Wide Tables & Matrices) |
 | **1-Click `Clean AI Text` (Strips ChatGPT Intro/Outro Fluff)** | ❌ Manual Editing | ✅ Built-In AI Text Cleaner |
 | **Privacy & Data Security** | ⚠️ Uploads to Server | ✅ **100% Client-Side In-Browser** |
 
@@ -64,10 +66,16 @@ Open **⚙️ Settings → Document Theme** on **[mdtopdf.space](https://mdtopdf
 
 ### 1. Page Layout Modes (**⚙️ Settings → Page Layout**)
 - **Single Column (Standard):** Clean A4 layout for homework, lab reports, and documentation.
-- **IEEE 2-Column (Paper):** Full-width title banner with a two-column justified body for conference papers and research summaries.
+- **IEEE 2-Column (Paper):** Full-width title banner with a two-column justified body for conference papers and research summaries. Wide tables (3+ columns), multi-matrix equations, and Mermaid diagrams automatically span across both columns (`column-span: all`) without clipping.
 - **Exam Cheat-Sheet (Dense 2-Col):** Ultra-compact `11px` two-column layout with `7mm` margins so you can fit 4–5 pages of lecture notes and formulas onto a single printable sheet.
 
-### 2. Supported Mathematical & Scientific Notation
+### 2. Markdown With Photos & Figures (Local Paths, Obsidian & Clipboard Paste)
+- **1-Click Missing Photo Attachment for Local Paths (`./images/setup.png`):** When you upload or paste an `.md` file that references local images on your computer, **[mdtopdf.space](https://mdtopdf.space)** renders an interactive **`📷 Click to attach setup.png (or drop photo anywhere)`** card in the preview so you can attach the photo in one click instead of getting a broken image icon.
+- **Drop `.md` + Photos Together:** Drag and drop your `.md` file alongside all your `.png`, `.jpg`, `.webp`, or `.svg` photos at once—every image is automatically matched by filename.
+- **Obsidian Wiki-Links & Custom Width Control (`|420`):** Supports Obsidian embeds (`![[photo.png]]` and `![[photo.png|420]]`) as well as standard Markdown width sizing (`![Figure 1: Step Response|420](./figures/plot.png)` or `|60%`) with automatic italicized academic figure captions.
+- **Clipboard Screenshots (`Cmd+V`) & CORS-Safe Web Images:** Paste MATLAB/Simulink screenshots directly into the editor with `Cmd+V` / `Ctrl+V`, and export external `https://` images reliably via automatic Base64 pre-fetching.
+
+### 3. Supported Mathematical & Scientific Notation
 - **LaTeX Environments:** `equation`, `align`, `aligned`, `gather`, `gathered`, `matrix`, `pmatrix`, `bmatrix`, `Bmatrix`, `vmatrix`, `Vmatrix`, `cases`, `rcases`, `split`, `array`
 - **Physics Macros:** `\dd{t}`, `\dv{y}{x}`, `\dv[2]{y}{x}`, `\pdv{f}{x}`, `\vb{x}`, `\va{x}`, `\vu{x}`, `\abs{x}`, `\norm{x}`, `\bra{\psi}`, `\ket{\phi}`, `\braket{\psi}{\phi}`, `\ev{A}`, `\mel{n}{A}{m}`
 - **SI Units (`siunitx`):** `\SI{45}{\milli\second}`, `\SI{10}{\kilo\ohm}`, `\SI{25}{\celsius}`, `\num{1.6e-19}`, `\ang{45}`
